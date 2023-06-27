@@ -1,0 +1,1 @@
+(()=>{"use strict";!function(){const e=document.querySelector("#content"),t=function(){const e=document.createElement("header");e.setAttribute("id","header");const t=document.createElement("h1");return t.textContent="To-Do-App",e.appendChild(t),e}();e.appendChild(t)}()})();
