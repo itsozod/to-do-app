@@ -58,7 +58,12 @@ function createPage() {
     h1Main.classList.add('h1-main');
     h1Main.textContent = 'Add a To Do';
 
+    const addBtn = document.createElement('img');
+    addBtn.classList.add('add-btn');
+    addBtn.src = './images/add-button.png';
+
     addContainer.appendChild(h1Main);
+    addContainer.appendChild(addBtn);
 
     main.appendChild(addContainer);
 
