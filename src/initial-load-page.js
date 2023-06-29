@@ -47,25 +47,43 @@ function createPage() {
     pageContainer.appendChild(sideBar)
 
     // main
-
     const main = document.createElement('main');
     main.setAttribute('id', 'main');
 
-    const addContainer = document.createElement('div');
-    addContainer.classList.add('add-container');
+    // home container
+    const addHomeContainer = document.createElement('div');
+    addHomeContainer.classList.add('add-homeContainer');
 
-    const h1Main = document.createElement('h1');
-    h1Main.classList.add('h1-main');
-    h1Main.textContent = 'Add a To Do';
+    const h1Home = document.createElement('h1');
+    h1Home.classList.add('h1-home');
+    h1Home.textContent = 'Add a To Do';
 
-    const addBtn = document.createElement('img');
-    addBtn.classList.add('add-btn');
-    addBtn.src = './images/add-button.png';
+    const addHomeBtn = document.createElement('img');
+    addHomeBtn.classList.add('add-home-btn');
+    addHomeBtn.src = './images/add-button.png';
 
-    addContainer.appendChild(h1Main);
-    addContainer.appendChild(addBtn);
+    addHomeContainer.appendChild(h1Home);
+    addHomeContainer.appendChild(addHomeBtn);
 
-    main.appendChild(addContainer);
+    main.appendChild(addHomeContainer);
+
+    // notes container
+    const addNotesContainer = document.createElement('div');
+    addNotesContainer.classList.add('add-notesContainer');
+
+    const h1Notes = document.createElement('h1');
+    h1Notes.classList.add('h1-notes');
+    h1Notes.textContent = 'Add a note';
+
+    const addNotesBtn = document.createElement('img');
+    addNotesBtn.classList.add('add-notes-btn');
+    addNotesBtn.src = './images/add-button.png';
+
+    addNotesContainer.appendChild(h1Notes);
+    addNotesContainer.appendChild(addNotesBtn);
+
+    main.appendChild(addNotesContainer);
+
 
     pageContainer.appendChild(main)
     return pageContainer;
