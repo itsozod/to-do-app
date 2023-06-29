@@ -18,7 +18,13 @@ function createHeader() {
     header.appendChild(headerContainer);
     return header;
 }
-function createSideBar() {
+
+function createPage() {
+    // page container
+    const pageContainer = document.createElement('div');
+    pageContainer.classList.add('page-container');
+
+    // sidebar
     const sideBar = document.createElement('navbar');
     sideBar.classList.add('side-bar');
 
@@ -38,15 +44,36 @@ function createSideBar() {
     ulEl.appendChild(listNotes);
 
     sideBar.appendChild(ulEl);
-    return sideBar;
+    pageContainer.appendChild(sideBar)
+
+    // main
+
+    const main = document.createElement('main');
+    main.setAttribute('id', 'main');
+
+    const addContainer = document.createElement('div');
+    addContainer.classList.add('add-container');
+
+    const h1Main = document.createElement('h1');
+    h1Main.classList.add('h1-main');
+    h1Main.textContent = 'Add a To Do';
+
+    addContainer.appendChild(h1Main);
+
+    main.appendChild(addContainer);
+
+    pageContainer.appendChild(main)
+    return pageContainer;
 }
+
 
 function loadPage() {
     const content = document.querySelector('#content');
     const header = createHeader();
     content.appendChild(header);
 
-    const sideBar = createSideBar();
-    content.appendChild(sideBar);
+    const pageContainer = createPage();
+    content.appendChild(pageContainer);
+
 }
 export default loadPage;

@@ -38,11 +38,6 @@ body:before {
 .side-bar {
     position: relative;
 }
-.ul-bar {
-    background-color: rgba(135, 206, 250, 0.6); /* lightskyblue with 50% transparency */
-    width: 200px;
-    height: 100vh;
-}
 .list-home, .list-notes {
     list-style-type: none;
     padding: 8px;
@@ -52,3 +47,32 @@ body:before {
 .active {
     color: red;
 }
+.page-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+.side-bar {
+    flex: 0 0 200px;
+    height: 100vh;
+    background-color: rgba(135, 206, 250, 0.5); /* lightskyblue with 50% transparency */
+
+}
+#main {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    /* background-color: antiquewhite; */
+}
+.add-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(lightskyblue, lightpink);
+    border-radius: 20px;
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+}
+  
