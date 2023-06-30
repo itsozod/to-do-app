@@ -44,7 +44,7 @@ function createPage() {
     ulEl.appendChild(listNotes);
 
     sideBar.appendChild(ulEl);
-    pageContainer.appendChild(sideBar)
+    pageContainer.appendChild(sideBar);
 
     // main
     const main = document.createElement('main');
