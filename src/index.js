@@ -1,4 +1,5 @@
 import loadPage from "./initial-load-page";
+import loadHomeForm from "./home-form";
 
 
 function displayHomeOrNotes() {
@@ -10,24 +11,34 @@ function displayHomeOrNotes() {
     const addNotesBtn = document.querySelector('.add-notes-btn');
 
     listHome.addEventListener('click', () => {
+      // const formContainer = document.querySelector('.form-container');
+
         listHome.classList.add('active');
         listNotes.classList.remove('active');
         addHomeContainer.style.display = 'flex';
         addNotesContainer.style.display = 'none';
+        // formContainer.style.display = 'none';
     });
 
     listNotes.addEventListener('click', () => {
+      const formContainer = document.querySelector('.form-container');
+
         listNotes.classList.add('active');
         listHome.classList.remove('active');
         addHomeContainer.style.display = 'none';
         addNotesContainer.style.display = 'flex';
+        formContainer.style.display = 'none';
     });
 
     addHomeBtn.addEventListener('click', () => {
+      const formContainer = document.querySelector('.form-container');
+
         if (addHomeBtn.classList.contains('active')) {
           addHomeBtn.classList.remove('active');
+          formContainer.style.display = 'none';
         } else {
           addHomeBtn.classList.add('active');
+          formContainer.style.display = 'flex';
         }
     });
 
@@ -44,5 +55,6 @@ function displayHomeOrNotes() {
 function showPage() {
     loadPage();
     displayHomeOrNotes();
+    loadHomeForm();
 };
 showPage();
