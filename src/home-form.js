@@ -25,14 +25,30 @@ function createNotesForm() {
 
 function preventDefaultHome() {
     const form = document.querySelector('#form');
+    const nameHomeInput = document.querySelector('#name');
+    const nameHomeError = document.querySelector('#nameError');
     form.addEventListener('submit', function(event) {
         event.preventDefault();
+
+        if (nameHomeInput.value === "") {
+            nameHomeError.textContent = " * Fill the input field";
+        } else {
+            nameHomeError.textContent = "";
+        }
     });
 }
 function preventDefaultNotes() {
     const form1 = document.querySelector('#form1');
+    const nameNotesInput = document.querySelector('#note');
+    const nameNotesError = document.querySelector('#noteError');
     form1.addEventListener('submit', function(event) {
         event.preventDefault();
+
+        if (nameNotesInput.value === "") {
+            nameNotesError.textContent = " * Fill the input field";
+        } else {
+            nameNotesError.textContent = "";
+        }
     });
 }
 
