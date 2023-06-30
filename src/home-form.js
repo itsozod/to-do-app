@@ -14,14 +14,27 @@ function createNotesForm() {
     const formContainer1 = document.createElement('div');
     formContainer1.classList.add('form-container1');
     formContainer1.innerHTML = `
-    <form action="" id="form">
-    <input type="text" id="name" name="name" placeholder="Your notes's name">
+    <form action="" id="form1">
+    <input type="text" id="note" name="name" placeholder="Your notes's name">
     <button type="submit" id="submit-btn">Submit</button>
-    <div id="nameError" class="error"></div>
+    <div id="noteError" class="error"></div>
 </form>
     `;
     return formContainer1;
 };
+
+function preventDefaultHome() {
+    const form = document.querySelector('#form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+    });
+}
+function preventDefaultNotes() {
+    const form1 = document.querySelector('#form1');
+    form1.addEventListener('submit', function(event) {
+        event.preventDefault();
+    });
+}
 
 function loadHomeForm() {
     const main = document.querySelector('#main');
@@ -30,5 +43,10 @@ function loadHomeForm() {
 
     const formContainer1 = createNotesForm();
     main.appendChild(formContainer1);
+
+    preventDefaultHome();
+    preventDefaultNotes();
 };
 export default loadHomeForm;
+// export {preventDefaultHome};
+// export {preventDefaultNotes};
