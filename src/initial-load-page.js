@@ -68,27 +68,15 @@ function createPage() {
     const homeFormContainer = document.createElement('div');
     homeFormContainer.classList.add('form-container');
 
-    // const emptyTodo = document.createElement('div');
-    // emptyTodo.classList.add('empty-todo');
-
-    // const emptyH2 = document.createElement('h2');
-    // emptyH2.classList.add('empty-h2');
-    // emptyH2.textContent = 'Your to do app is currently empty';
-
-    // emptyTodo.appendChild(emptyH2);
+    const todosContainer = document.createElement('div');
+    todosContainer.classList.add('todos-container');
 
     main.appendChild(addHomeContainer);
-    // main.appendChild(emptyTodo);
     main.appendChild(homeFormContainer);
+    main.appendChild(todosContainer);
 
     pageContainer.appendChild(main)
     return pageContainer;
-}
-
-function createTodosContainer() {
-    const todosContainer = document.createElement('div');
-    todosContainer.classList.add('todos-container');
-    return todosContainer;
 }
 
 
@@ -99,10 +87,6 @@ function loadPage() {
 
     const pageContainer = createPage();
     content.appendChild(pageContainer);
-
-    const main = document.querySelector('#main');
-    const todosContainer = createTodosContainer();
-    main.appendChild(todosContainer);
 
 }
 export default loadPage;
