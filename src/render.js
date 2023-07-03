@@ -12,9 +12,15 @@ function renderTodos() {
     let todoEl = document.createElement("div");
     todoEl.classList.add("container");
     todoEl.innerHTML = `
+    <img src="images/icon-green.png" alt="icon" class="green">
     <h2 class="todo">${todo.name}</h2>
+    <div class="button-container">
+      <img src="images/delete-button.png" alt="delete" class="delete-todo">
+      <img src="images/edit-button.png" alt="edit" class="todo-btn">
+    </div>
   `;
     todosContainer.appendChild(todoEl);
+    todosContainer.style.display = "flex";
   });
 }
 

@@ -68,7 +68,17 @@ function createPage() {
     const homeFormContainer = document.createElement('div');
     homeFormContainer.classList.add('form-container');
 
+    // const emptyTodo = document.createElement('div');
+    // emptyTodo.classList.add('empty-todo');
+
+    // const emptyH2 = document.createElement('h2');
+    // emptyH2.classList.add('empty-h2');
+    // emptyH2.textContent = 'Your to do app is currently empty';
+
+    // emptyTodo.appendChild(emptyH2);
+
     main.appendChild(addHomeContainer);
+    // main.appendChild(emptyTodo);
     main.appendChild(homeFormContainer);
 
     pageContainer.appendChild(main)
