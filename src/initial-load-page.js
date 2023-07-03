@@ -61,6 +61,7 @@ function createPage() {
     const addHomeBtn = document.createElement('img');
     addHomeBtn.classList.add('add-home-btn');
     addHomeBtn.src = './images/add-button.png';
+    addHomeBtn.alt = 'Add button';
     
     addHomeContainer.appendChild(h1Home);
     addHomeContainer.appendChild(addHomeBtn);
@@ -74,6 +75,24 @@ function createPage() {
     main.appendChild(addHomeContainer);
     main.appendChild(homeFormContainer);
     main.appendChild(todosContainer);
+
+    // notes container
+    const addNotesContainer = document.createElement('div');
+    addNotesContainer.classList.add('add-notesContainer');
+
+    const h1Notes = document.createElement('h1');
+    h1Notes.classList.add('h1-notes');
+    h1Notes.textContent = 'Add a note';
+    
+    const addNotesBtn = document.createElement('img');
+    addNotesBtn.classList.add('add-notes-btn');
+    addNotesBtn.src = './images/add-button.png';
+    addNotesBtn.alt = 'Add button';
+
+    addNotesContainer.appendChild(h1Notes);
+    addNotesContainer.appendChild(addNotesBtn);
+
+    main.appendChild(addNotesContainer);
 
     pageContainer.appendChild(main)
     return pageContainer;
