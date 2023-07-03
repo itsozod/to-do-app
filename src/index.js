@@ -1,6 +1,7 @@
 import loadPage from "./initial-load-page";
 import loadHomeForm  from './home-form';
-import addTodos from "./render";
+// import addTodos from "./render";
+import { myTodos, addTodos } from "./render";
 
 function displayHomeOrNotes() {
   const listHome = document.querySelector('.list-home');
@@ -15,7 +16,12 @@ function displayHomeOrNotes() {
     listNotes.classList.remove('active');
     addHomeContainer.style.display = 'flex';
     formHomeContainer.style.display = 'home';
-    todosContainer.style.display = 'flex';
+
+    if (myTodos.length === 0) {
+      todosContainer.style.display = 'none';
+    } else {
+      todosContainer.style.display = 'flex';
+    }
   });
   listNotes.addEventListener('click', () => {
     listHome.classList.remove('active');

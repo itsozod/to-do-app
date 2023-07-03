@@ -21,6 +21,22 @@ function renderTodos() {
   `;
     todosContainer.appendChild(todoEl);
     todosContainer.style.display = "flex";
+
+    const deleteTodo = todoEl.querySelector('.delete-todo');
+
+    deleteTodo.addEventListener('click', () =>{
+      const index = myTodos.indexOf(this);
+      myTodos.splice(index, 1);
+
+      if (myTodos.length === 0) {
+        todosContainer.style.display = 'none';
+      }
+      renderTodos();
+      setTimeout(() => {
+        alert('Your todo is deleted!');
+      }, 500);
+      console.log('Your todo is deleted!');
+    });
   });
 }
 
@@ -39,4 +55,5 @@ function renderTodos() {
     }
   }
 
-  export default addTodos;
+  // export default addTodos;
+  export { myTodos, addTodos };
