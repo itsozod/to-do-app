@@ -196,10 +196,20 @@ body:before {
     cursor: pointer;
     margin-right: 10px;
 }
+.red {
+    width: 45px;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    display: none;
+}
 .todo {
     cursor: pointer;
     margin-right: 10px;
     margin-left: 10px;
+}
+.todo.completed {
+    text-decoration: line-through;
 }
 .button-container {
     display: flex;
