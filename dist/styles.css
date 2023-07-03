@@ -52,12 +52,12 @@ body:before {
     position: relative;
     display: flex;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 /* side-bar */
 .side-bar {
     flex: 0 0 200px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgba(135, 206, 250, 0.5); /* lightskyblue with 50% transparency */
     position: relative;
 }
@@ -128,6 +128,9 @@ body:before {
     box-shadow: 2px 2px 5px black;
     cursor: pointer;
 }
+#name:focus {
+    border: 2px solid red;
+}
 #nameError {
     margin-top: 5px;
     color: red;
@@ -154,6 +157,9 @@ body:before {
     box-shadow: 2px 2px 5px black;
     cursor: pointer;
 }
+#submit-btn:hover {
+    background-color: aqua;
+}
 #submit-btn1 {
     padding: 8px;
     border-radius: 10px;
@@ -164,6 +170,7 @@ body:before {
 }
 .form-container {
     display: none;
+    margin-top: 10px;
 }
 .form-container1 {
     display: none;
@@ -171,7 +178,7 @@ body:before {
 
 /* to dos container */
 .todos-container {
-    margin: 10px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -187,6 +194,8 @@ body:before {
     justify-content: space-between;
     align-items: center;
     background-color: yellow;
+    border: 2px solid lightcoral;
+    border-radius: 10px;
     max-width: 500px;
 }
 .green {
@@ -224,6 +233,20 @@ body:before {
     width: 40px;
     height: 40px;
     cursor: pointer;
+}
+.add-back-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+.input-add {
+    padding: 5px;
+    outline: none;
+    border: 2px solid orange;
+}
+.input-add:focus {
+    border: 2px solid lightseagreen;
 }
 
   

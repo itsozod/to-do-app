@@ -33,7 +33,7 @@ function createPage() {
 
     const listHome = document.createElement('li')
     listHome.classList.add('list-home');
-    listHome.textContent = 'Home';
+    listHome.textContent = 'Todos';
     listHome.classList.add('active')
 
     const listNotes = document.createElement('li')
