@@ -67,6 +67,10 @@ function createPage() {
 
     main.appendChild(addHomeContainer);
 
+    const todosContainer = document.createElement('div');
+    todosContainer.classList.add('todos-container');
+    main.appendChild(todosContainer);
+
     // notes container
     const addNotesContainer = document.createElement('div');
     addNotesContainer.classList.add('add-notesContainer');
@@ -83,8 +87,6 @@ function createPage() {
     addNotesContainer.appendChild(addNotesBtn);
 
     main.appendChild(addNotesContainer);
-
-
     pageContainer.appendChild(main)
     return pageContainer;
 }

@@ -1,5 +1,5 @@
 import loadPage from "./initial-load-page";
-import loadHomeForm from "./home-form";
+import loadHomeForm  from './home-form';
 
 function displayHomeOrNotes() {
   const listHome = document.querySelector(".list-home");
