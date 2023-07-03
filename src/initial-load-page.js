@@ -53,42 +53,32 @@ function createPage() {
     // home container
     const addHomeContainer = document.createElement('div');
     addHomeContainer.classList.add('add-homeContainer');
-
+    
     const h1Home = document.createElement('h1');
     h1Home.classList.add('h1-home');
     h1Home.textContent = 'Add a To Do';
-
+    
     const addHomeBtn = document.createElement('img');
     addHomeBtn.classList.add('add-home-btn');
     addHomeBtn.src = './images/add-button.png';
-
+    
     addHomeContainer.appendChild(h1Home);
     addHomeContainer.appendChild(addHomeBtn);
+    
+    const homeFormContainer = document.createElement('div');
+    homeFormContainer.classList.add('form-container');
 
     main.appendChild(addHomeContainer);
+    main.appendChild(homeFormContainer);
 
-    const todosContainer = document.createElement('div');
-    todosContainer.classList.add('todos-container');
-    main.appendChild(todosContainer);
-
-    // notes container
-    const addNotesContainer = document.createElement('div');
-    addNotesContainer.classList.add('add-notesContainer');
-
-    const h1Notes = document.createElement('h1');
-    h1Notes.classList.add('h1-notes');
-    h1Notes.textContent = 'Add a note';
-
-    const addNotesBtn = document.createElement('img');
-    addNotesBtn.classList.add('add-notes-btn');
-    addNotesBtn.src = './images/add-button.png';
-
-    addNotesContainer.appendChild(h1Notes);
-    addNotesContainer.appendChild(addNotesBtn);
-
-    main.appendChild(addNotesContainer);
     pageContainer.appendChild(main)
     return pageContainer;
+}
+
+function createTodosContainer() {
+    const todosContainer = document.createElement('div');
+    todosContainer.classList.add('todos-container');
+    return todosContainer;
 }
 
 
@@ -99,6 +89,10 @@ function loadPage() {
 
     const pageContainer = createPage();
     content.appendChild(pageContainer);
+
+    const main = document.querySelector('#main');
+    const todosContainer = createTodosContainer();
+    main.appendChild(todosContainer);
 
 }
 export default loadPage;
