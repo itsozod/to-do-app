@@ -13,6 +13,7 @@ function displayHomeOrNotes() {
   const formHomeContainer = document.querySelector('.form-container');
   const formNotesContainer = document.querySelector('.form-container1');
   const todosContainer = document.querySelector('.todos-container');
+  const notesContainer = document.querySelector('.notes-container');
 
 
   listHome.addEventListener('click', () => {
@@ -22,6 +23,7 @@ function displayHomeOrNotes() {
     addNotesBtn.classList.remove('active');
     addNotesContainer.style.display = 'none';
     formNotesContainer.style.display = 'none';
+    notesContainer.style.display = 'none';
     todosContainer.style.display = 'flex';
 
     if (myTodos.length === 0) {
@@ -39,6 +41,7 @@ function displayHomeOrNotes() {
     addNotesContainer.style.display = 'flex';
     formHomeContainer.style.display = 'none';
     todosContainer.style.display = 'none';
+    notesContainer.style.display = 'grid';
 
   });
 

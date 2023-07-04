@@ -68,6 +68,7 @@ body:before {
     0.5
   ); /* lightskyblue with 50% transparency */
   position: relative;
+  /* display: none; */
 }
 #main {
   flex: 1 1 auto;
@@ -165,6 +166,7 @@ body:before {
   cursor: pointer;
   margin-bottom: 10px;
   width: 300px;
+  height: 200px;
   max-width: 500px;
 }
 #note:focus {
@@ -295,22 +297,59 @@ body:before {
 
 /* notes container */
 .notes-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 40px;
-  margin-top: 60px;
-}
-.notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .notes {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
-    background-color: #7D91FF;
-}
+    justify-content: center;
+  }
+  /* media query for notes container */
+  @media screen and (max-width: 860px) {
+    .notes-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .note-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+  }
+  
 .description {
-    width: 300px;
-    text-align: center;
-    resize: none;
+  width: 300px;
+  text-align: center;
+  resize: none;
+  outline: none;
+  cursor: pointer;
 }
 .note-name {
-    width: 300px;
-    resize: vertical;
+  width: 300px;
+  resize: vertical;
+  outline: none;
+  border: 2px solid lightseagreen;
+  height: 200px;
+  cursor: pointer;
+}
+.desc-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+}
+.delete-note {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+}
+.edit-note {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
 }
