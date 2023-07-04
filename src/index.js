@@ -10,6 +10,7 @@ function displayHomeOrNotes() {
   const addNotesContainer = document.querySelector('.add-notesContainer');
   const addNotesBtn = document.querySelector('.add-notes-btn');
   const formHomeContainer = document.querySelector('.form-container');
+  const formNotesContainer = document.querySelector('.form-container1');
   const todosContainer = document.querySelector('.todos-container');
 
 
@@ -19,6 +20,7 @@ function displayHomeOrNotes() {
     addHomeContainer.style.display = 'flex';
     addNotesBtn.classList.remove('active');
     addNotesContainer.style.display = 'none';
+    formNotesContainer.style.display = 'none';
     todosContainer.style.display = 'flex';
 
     if (myTodos.length === 0) {
@@ -52,8 +54,10 @@ function displayHomeOrNotes() {
   addNotesBtn.addEventListener('click', () => {
     if (addNotesBtn.classList.contains('active')) {
       addNotesBtn.classList.remove('active');
+      formNotesContainer.style.display = 'none';
     } else {
       addNotesBtn.classList.add('active');
+      formNotesContainer.style.display = 'flex';
     }
   });
 }

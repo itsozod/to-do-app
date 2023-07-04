@@ -144,6 +144,9 @@ body:before {
     box-shadow: 2px 2px 5px black;
     cursor: pointer;
 }
+#note:focus {
+    border: 2px solid green;
+}
 #noteError {
     margin-top: 5px;
     color: red;
@@ -167,6 +170,9 @@ body:before {
     background-color: lightskyblue;
     box-shadow: 2px 2px 5px black;
     cursor: pointer;
+}
+#submit-btn1:hover {
+    background-color: limegreen;
 }
 .form-container {
     display: none;
