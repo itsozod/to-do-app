@@ -6,6 +6,7 @@
 }
 body {
   position: relative;
+  width: 100%;
   min-height: 100vh;
 }
 body:before {
@@ -54,7 +55,7 @@ body:before {
 .page-container {
   position: relative;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   min-height: 100vh;
 }
 /* side-bar */
@@ -74,12 +75,11 @@ body:before {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 .main-add-home {
   display: flex;
   justify-content: center;
+  display: none;
 }
 .add-homeContainer {
   display: flex;
@@ -109,6 +109,7 @@ body:before {
 .main-add-notes {
   display: flex;
   justify-content: center;
+  display: none;
 }
 .add-notesContainer {
   display: flex;
@@ -334,38 +335,40 @@ padding: 20px;
     padding: 20px;
     display: flex;
     justify-content: center;
+    display: none;
   }
-  /* media query for notes container */
-  @media screen and (max-width: 860px) {
-    .notes-container {
-        display: flex;
-        flex-direction: column;
-    }
-    .note-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+  .note-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
   
 .description {
-  /* width: 300px; */
   text-align: center;
   resize: none;
   outline: none;
   cursor: pointer;
+  width: 230px;
 }
 .note-name {
-  width: 250px;
+  width: 230px;
+  height: 200px;
   resize: vertical;
   outline: none;
   border: 2px solid lightseagreen;
-  height: 200px;
   cursor: pointer;
 }
+/* @media screen and (max-width: 372px) {
+  .description, .note-name {
+    width: 150px;
+  }
+  .note-name {
+    height: 150px;
+  }
+} */
 .desc-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: -10px;
 }
 .delete-note {
@@ -373,14 +376,4 @@ padding: 20px;
   height: auto;
   cursor: pointer;
 }
-.edit-note {
-    width: 50px;
-    height: auto;
-    cursor: pointer;
-}
-/* .add-back-btn {
-  margin-left: 10px;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-} */
+
