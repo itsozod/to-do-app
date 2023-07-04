@@ -75,7 +75,11 @@ body:before {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
-  align-items: center;
+  /* align-items: center; */
+}
+.main-add-home {
+  display: flex;
+  justify-content: center;
 }
 .add-homeContainer {
   display: flex;
@@ -101,6 +105,10 @@ body:before {
 }
 .add-home-btn.active {
   transform: scale(1.3) rotate(360deg);
+}
+.main-add-notes {
+  display: flex;
+  justify-content: center;
 }
 .add-notesContainer {
   display: flex;
@@ -202,9 +210,17 @@ body:before {
 #submit-btn1:hover {
   background-color: limegreen;
 }
+.main-home-form {
+  display: flex;
+  justify-content: center;
+}
 .form-container {
   display: none;
   margin-top: 10px;
+}
+.main-notes-form {
+  display: flex;
+  justify-content: center;
 }
 .form-container1 {
   display: flex;
@@ -223,6 +239,10 @@ body:before {
 }
 
 /* to dos container */
+.main-todos {
+  display: flex;
+  justify-content: center;
+}
 .todos-container {
   margin-top: 20px;
   display: flex;
@@ -296,11 +316,16 @@ body:before {
 }
 
 /* notes container */
+.main-notes-container {
+margin: 20px;
+padding: 20px;
+
+}
 .notes-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 10px;
-    padding: 10px;
+    grid-gap: 20px;
+    padding: 20px;
     border-radius: 10px;
   }
   .notes {
@@ -324,14 +349,14 @@ body:before {
   }
   
 .description {
-  width: 300px;
+  /* width: 300px; */
   text-align: center;
   resize: none;
   outline: none;
   cursor: pointer;
 }
 .note-name {
-  width: 300px;
+  width: 250px;
   resize: vertical;
   outline: none;
   border: 2px solid lightseagreen;
@@ -353,3 +378,9 @@ body:before {
     height: auto;
     cursor: pointer;
 }
+/* .add-back-btn {
+  margin-left: 10px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+} */
