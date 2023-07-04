@@ -1,6 +1,7 @@
 import loadPage from "./initial-load-page";
 import loadHomeForm  from './home-form';
 import { myTodos, addTodos } from "./render";
+import { addNotes } from "./render-notes";
 
 function displayHomeOrNotes() {
   const listHome = document.querySelector('.list-home');
@@ -68,5 +69,8 @@ function showPage() {
   loadHomeForm();
   const submitBtn = document.querySelector('#submit-btn');
   submitBtn.addEventListener("click", addTodos);
+
+  const submitBtn1 = document.querySelector('#submit-btn1');
+  submitBtn1.addEventListener('click', addNotes);
 }
 showPage();

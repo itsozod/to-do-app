@@ -97,7 +97,11 @@ function createPage() {
     const notesFormContainer = document.createElement('div');
     notesFormContainer.classList.add('form-container1');
 
+    const notesContainer = document.createElement('div');
+    notesContainer.classList.add('notes-container');
+
     main.appendChild(notesFormContainer);
+    main.appendChild(notesContainer);
 
     pageContainer.appendChild(main);
     return pageContainer;
