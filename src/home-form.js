@@ -13,7 +13,8 @@ function createNotesForm() {
   const form1 = document.createElement("form");
   form1.setAttribute("id", "form1");
   form1.innerHTML = `
-    <input type="text" id="note" name="name" placeholder="Your notes's name">
+    <textarea id="note" name="name" placeholder="Your notes's description"></textarea>
+    <textarea id="noteName" name="name" placeholder="Your notes's name"></textarea>
     <button type="submit" id="submit-btn1">Submit</button>
     <div id="noteError" class="error"></div>
     `;

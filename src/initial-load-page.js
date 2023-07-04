@@ -99,7 +99,7 @@ function createPage() {
 
     main.appendChild(notesFormContainer);
 
-    pageContainer.appendChild(main)
+    pageContainer.appendChild(main);
     return pageContainer;
 }
 
