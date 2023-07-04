@@ -39,12 +39,19 @@ function preventDefaultHome() {
 function preventDefaultNotes() {
     const form1 = document.querySelector('#form1');
     const nameNotesInput = document.querySelector('#note');
+    const nameNotesInput1 = document.querySelector('#noteName');
     const nameNotesError = document.querySelector('#noteError');
     form1.addEventListener('submit', function(event) {
         event.preventDefault();
 
         if (nameNotesInput.value === "") {
-            nameNotesError.textContent = " * Fill the input field";
+            nameNotesError.textContent = " * Fill the textarea fields";
+        } else {
+            nameNotesError.textContent = "";
+        }
+
+        if (nameNotesInput1.value === "") {
+            nameNotesError.textContent = " * Fill the textarea fields";
         } else {
             nameNotesError.textContent = "";
         }

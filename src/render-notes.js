@@ -13,8 +13,8 @@ function renderNotes() {
         let noteEl = document.createElement('div');
         noteEl.classList.add('notes');
         noteEl.innerHTML = `
-        <h2 class="description">${note.description}</h2>
-        <p class="note-name">${note.noteName}</p>
+        <textarea class="description">${note.description}</textarea>
+        <textarea class="note-name">${note.noteName}</textarea>
         `;
         notesContainer.appendChild(noteEl);
     });
