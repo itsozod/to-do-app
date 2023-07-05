@@ -24,6 +24,25 @@ body:before {
   background-attachment: fixed;
   opacity: 0.7;
 }
+.lines {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  cursor: pointer;
+}
+.line1, .line2, .line3{
+  background-color: white;
+  width: 30px;
+  height: 5px;
+  margin: 3px;
+  transition: 0.3s;
+}
+.line1.active {
+  transform: translateY(10px) rotate(235deg);
+}
+.line3.active {
+  transform: translateY(-10px) rotate(-230deg);
+}
 #header {
   display: flex;
   position: relative;
@@ -37,6 +56,8 @@ body:before {
 /* header */
 .header-container {
   display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
 }
 .h1-header {
   margin-right: 10px;
@@ -57,6 +78,7 @@ body:before {
 .page-container {
   position: relative;
   display: flex;
+  /* flex-direction: column; */
   min-height: 100vh;
 }
 /* side-bar */
@@ -71,6 +93,7 @@ body:before {
   );
   position: relative;
   box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.5);
+  border-right: 2px solid red;
   /* display: none; */
 }
 #main {
