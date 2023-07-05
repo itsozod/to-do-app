@@ -38,15 +38,20 @@ function moveLines() {
     const line1 = document.querySelector('.line1');
     const line2 = document.querySelector('.line2');
     const line3 = document.querySelector('.line3');
+    const sideBar = document.querySelector('.side-bar');
+    const addHomeBtn = document.querySelector('.add-home-btn');
+    const addNotesBtn = document.querySelector('.add-notes-btn');
 
     if (line1.classList.contains('active') && line3.classList.contains('active')) {
         line1.classList.remove('active');
         line2.style.opacity = '1';
         line3.classList.remove('active');
+        sideBar.style.display = 'none';
       } else {
         line1.classList.add('active');
         line2.style.opacity = '0';
         line3.classList.add('active');
+        sideBar.style.display = 'flex';
       }
 }
 
