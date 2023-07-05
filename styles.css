@@ -8,6 +8,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  margin: 0;
 }
 body:before {
   content: "";
@@ -55,7 +56,6 @@ body:before {
 .page-container {
   position: relative;
   display: flex;
-  /* justify-content: center; */
   min-height: 100vh;
 }
 /* side-bar */
@@ -69,17 +69,18 @@ body:before {
     0.5
   ); /* lightskyblue with 50% transparency */
   position: relative;
-  /* display: none; */
+  display: none;
 }
 #main {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .main-add-home {
   display: flex;
   justify-content: center;
-  display: none;
+  /* display: none; */
 }
 .add-homeContainer {
   display: flex;
@@ -109,7 +110,7 @@ body:before {
 .main-add-notes {
   display: flex;
   justify-content: center;
-  display: none;
+  /* display: none; */
 }
 .add-notesContainer {
   display: flex;
@@ -316,6 +317,58 @@ body:before {
   border: 2px solid lightseagreen;
 }
 
+@media screen and (max-width: 401px) {
+  .container {
+    max-width: 300px;
+  }
+  .todo {
+    font-size: 18px;
+  }
+  .green {
+    width: 35px;
+  }
+  .red {
+    width: 35px;
+  }
+  .delete-todo {
+    width: 35px;
+  }
+  .todo-btn {
+    width: 35px;
+  }
+  .add-back-btn {
+    width: 30px;
+    height: 35px;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 343px) {
+  .container {
+    max-width: 280px;
+  }
+  .input-add {
+    width: 120px;
+  }
+  .todo {
+    font-size: 14px;
+  }
+  .green {
+    width: 30px;
+  }
+  .red {
+    width: 30px;
+  }
+  .delete-todo {
+    width: 30px;
+  }
+  .todo-btn {
+    width: 30px;
+  }
+  .add-back-btn {
+    width: 30px;
+  }
+}
+
 /* notes container */
 .main-notes-container {
 margin: 20px;
@@ -335,7 +388,7 @@ padding: 20px;
     padding: 20px;
     display: flex;
     justify-content: center;
-    display: none;
+    /* display: none; */
   }
   .note-content {
     display: flex;
@@ -349,6 +402,7 @@ padding: 20px;
   outline: none;
   cursor: pointer;
   width: 230px;
+  border: 2px solid lightseagreen;
 }
 .note-name {
   width: 230px;
@@ -357,15 +411,8 @@ padding: 20px;
   outline: none;
   border: 2px solid lightseagreen;
   cursor: pointer;
+  border-top: none;
 }
-/* @media screen and (max-width: 372px) {
-  .description, .note-name {
-    width: 150px;
-  }
-  .note-name {
-    height: 150px;
-  }
-} */
 .desc-container {
     display: flex;
     justify-content: center;
@@ -375,5 +422,52 @@ padding: 20px;
   width: 50px;
   height: auto;
   cursor: pointer;
+}
+/* media queries for notes */
+@media screen and (max-width: 640px) {
+  .description {
+    width: 370px;
+  }
+  .note-name {
+    width: 370px;
+  }
+}
+@media screen and (max-width: 527px) {
+  .description {
+    width: 300px;
+  }
+  .note-name {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .description {
+    width: 270px;
+  }
+  .note-name {
+    width: 270px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .description {
+    width: 220px;
+  }
+  .note-name {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 372px) {
+  .notes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .description, .note-name {
+    width: 190px;
+  }
+  .note-name {
+    height: 150px;
+  }
 }
 
