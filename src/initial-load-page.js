@@ -2,6 +2,20 @@ function createHeader() {
     const header = document.createElement('header');
     header.setAttribute('id', 'header');
 
+    const lines = document.createElement('div');
+    lines.classList.add('lines');
+
+    const line1 = document.createElement('div');
+    line1.classList.add('line1');
+    const line2 = document.createElement('div');
+    line2.classList.add('line2');
+    const line3 = document.createElement('div');
+    line3.classList.add('line3');
+
+    lines.appendChild(line1);
+    lines.appendChild(line2);
+    lines.appendChild(line3);
+
     const headerContainer = document.createElement('div');
     headerContainer.classList.add('header-container');
 
@@ -15,8 +29,25 @@ function createHeader() {
 
     headerContainer.appendChild(h1);
     headerContainer.appendChild(checkedImage);
+    header.appendChild(lines);
     header.appendChild(headerContainer);
     return header;
+}
+
+function moveLines() {
+    const line1 = document.querySelector('.line1');
+    const line2 = document.querySelector('.line2');
+    const line3 = document.querySelector('.line3');
+
+    if (line1.classList.contains('active') && line3.classList.contains('active')) {
+        line1.classList.remove('active');
+        line2.style.opacity = '1';
+        line3.classList.remove('active');
+      } else {
+        line1.classList.add('active');
+        line2.style.opacity = '0';
+        line3.classList.add('active');
+      }
 }
 
 function createPage() {
@@ -139,6 +170,9 @@ function loadPage() {
 
     const pageContainer = createPage();
     content.appendChild(pageContainer);
+
+    const lines = document.querySelector('.lines');
+    lines.addEventListener('click', moveLines);
 
 }
 export default loadPage;
