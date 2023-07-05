@@ -93,10 +93,9 @@ body:before {
     250,
     0.5
   );
-  position: relative;
   box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.5);
   border-right: 2px solid red;
-  /* display: none; */
+  display: none;
 }
 #main {
   flex: 1 1 auto;
@@ -107,7 +106,6 @@ body:before {
 .main-add-home {
   display: flex;
   justify-content: center;
-  /* display: none; */
 }
 .add-homeContainer {
   display: flex;
@@ -137,7 +135,6 @@ body:before {
 .main-add-notes {
   display: flex;
   justify-content: center;
-  /* display: none; */
 }
 .add-notesContainer {
   display: flex;
@@ -173,7 +170,7 @@ body:before {
   .side-bar {
     display: flex;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     display: none;
     border: none;
     position: absolute;
@@ -184,14 +181,14 @@ body:before {
     left: 0;
   }
   .ul-bar {
-    margin: 10px;
+    margin: 20px;
   }
   .list-home {
     list-style-type: none;
     padding: 10px;
-    width: 100px;
+    width: 90px;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 10px;
     color: white;
     text-shadow: 2px 2px 5px black;
@@ -205,9 +202,9 @@ body:before {
     list-style-type: none;
     list-style-type: none;
     padding: 10px;
-    width: 100px;
+    width: 90px;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     text-shadow: 2px 2px 5px black;
   }
@@ -464,7 +461,7 @@ padding: 20px;
   .notes {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: center;
   }

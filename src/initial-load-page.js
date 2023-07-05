@@ -41,17 +41,28 @@ function moveLines() {
     const sideBar = document.querySelector('.side-bar');
     const addHomeBtn = document.querySelector('.add-home-btn');
     const addNotesBtn = document.querySelector('.add-notes-btn');
+    const formContainer = document.querySelector('.form-container');
+    const formContainer1 = document.querySelector('.form-container1');
 
     if (line1.classList.contains('active') && line3.classList.contains('active')) {
-        line1.classList.remove('active');
-        line2.style.opacity = '1';
-        line3.classList.remove('active');
-        sideBar.style.display = 'none';
+        setTimeout(() => {
+            line1.classList.remove('active');
+            line2.style.opacity = '1';
+            line3.classList.remove('active');
+            sideBar.style.display = 'none';
+        }, 500);
+        
       } else {
-        line1.classList.add('active');
-        line2.style.opacity = '0';
-        line3.classList.add('active');
-        sideBar.style.display = 'flex';
+        setTimeout(() => {
+            line1.classList.add('active');
+            line2.style.opacity = '0';
+            line3.classList.add('active');
+            sideBar.style.display = 'flex';
+        }, 500)
+        addHomeBtn.classList.remove('active');
+        formContainer.style.display = 'none';
+        addNotesBtn.classList.remove('active');
+        formContainer1.style.display = 'none';
       }
 }
 
