@@ -32,6 +32,7 @@ body:before {
   height: 50px;
   line-height: 50px;
   background-color: rgba(57, 97, 240, 0.5);
+  box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.5);
 }
 /* header */
 .header-container {
@@ -67,9 +68,10 @@ body:before {
     206,
     250,
     0.5
-  ); /* lightskyblue with 50% transparency */
+  );
   position: relative;
-  display: none;
+  box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.5);
+  /* display: none; */
 }
 #main {
   flex: 1 1 auto;
