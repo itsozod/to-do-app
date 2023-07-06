@@ -39,21 +39,49 @@ function createHeader() {
     return header;
 }
 
-function toggleDarkMode() {
-    const toggle = document.querySelector('#toggleDark');
-    const body = document.querySelector('body');
-    toggle.classList.toggle('bi-moon-fill');
-    const isDarkMode = toggle.classList.toggle('bi-brightness-high-fill');
+// const currentMode = localStorage.getItem('mode');
+// if (currentMode === 'dark') {
+//     toggleDarkMode();
+// }
 
-    if (isDarkMode) {
+
+// function toggleDarkMode() {
+//     const toggle = document.querySelector('#toggleDark');
+//     const body = document.querySelector('body');
+//     toggle.classList.toggle('bi-moon-fill');
+//     const isDarkMode = toggle.classList.toggle('bi-brightness-high-fill');
+
+//     if (isDarkMode) {
+//         toggle.style.color = 'goldenrod';
+//         body.style.setProperty('--before-opacity', '1');
+//         localStorage.setItem('mode', 'light');
+//     } else {
+//         toggle.style.color = '#1a193a';
+//         body.style.setProperty('--before-opacity', '0');
+//         body.style.backgroundColor = '#1a193a';
+//         localStorage.setItem('mode', 'dark');
+//     }
+// }
+
+    function toggleDarkMode() {
+      const toggle = document.querySelector('#toggleDark');
+      const body = document.querySelector('body');
+      toggle.classList.toggle('bi-moon-fill');
+      const isDarkMode = toggle.classList.toggle('bi-brightness-high-fill');
+  
+      if (isDarkMode) {
         toggle.style.color = 'goldenrod';
         body.style.setProperty('--before-opacity', '1');
-    } else {
+        localStorage.setItem('mode', 'light');
+      } else {
         toggle.style.color = '#1a193a';
         body.style.setProperty('--before-opacity', '0');
         body.style.backgroundColor = '#1a193a';
+        localStorage.setItem('mode', 'dark');
+      }
     }
-}
+  
+
 function moveLines() {
     const line1 = document.querySelector('.line1');
     const line2 = document.querySelector('.line2');
@@ -212,8 +240,6 @@ function loadPage() {
     const lines = document.querySelector('.lines');
     lines.addEventListener('click', moveLines);
 
-    const toggle = document.querySelector('#toggleDark');
-    toggle.addEventListener('click', toggleDarkMode);
-
 }
-export default loadPage ;
+export default loadPage;
+export { toggleDarkMode };

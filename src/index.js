@@ -2,6 +2,7 @@ import loadPage from "./initial-load-page";
 import loadHomeForm  from './home-form';
 import { myTodos, addTodos } from "./render";
 import { addNotes } from "./render-notes";
+import { toggleDarkMode } from "./initial-load-page";
 
 function displayHomeOrNotes() {
   const listHome = document.querySelector('.list-home');
@@ -76,5 +77,13 @@ function showPage() {
 
   const submitBtn1 = document.querySelector('#submit-btn1');
   submitBtn1.addEventListener('click', addNotes);
+
+  const toggle = document.querySelector('#toggleDark');
+  toggle.addEventListener("click", toggleDarkMode);
+
+  const currentMode = localStorage.getItem('mode');
+  if (currentMode === 'dark') {
+    toggleDarkMode();
+  }
 }
 showPage();
