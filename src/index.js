@@ -70,6 +70,7 @@ function showPage() {
   loadPage();
   displayHomeOrNotes();
   loadHomeForm();
+
   const submitBtn = document.querySelector('#submit-btn');
   submitBtn.addEventListener("click", addTodos);
 
