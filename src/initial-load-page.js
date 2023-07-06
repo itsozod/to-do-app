@@ -39,42 +39,33 @@ function createHeader() {
     return header;
 }
 
-// const currentMode = localStorage.getItem('mode');
-// if (currentMode === 'dark') {
-//     toggleDarkMode();
-// }
-
-
-// function toggleDarkMode() {
-//     const toggle = document.querySelector('#toggleDark');
-//     const body = document.querySelector('body');
-//     toggle.classList.toggle('bi-moon-fill');
-//     const isDarkMode = toggle.classList.toggle('bi-brightness-high-fill');
-
-//     if (isDarkMode) {
-//         toggle.style.color = 'goldenrod';
-//         body.style.setProperty('--before-opacity', '1');
-//         localStorage.setItem('mode', 'light');
-//     } else {
-//         toggle.style.color = '#1a193a';
-//         body.style.setProperty('--before-opacity', '0');
-//         body.style.backgroundColor = '#1a193a';
-//         localStorage.setItem('mode', 'dark');
-//     }
-// }
-
     function toggleDarkMode() {
       const toggle = document.querySelector('#toggleDark');
       const body = document.querySelector('body');
+      const h1Header = document.querySelector('.h1-header'); 
+      const h1Home = document.querySelector('.h1-home'); 
+      const h1Notes = document.querySelector('.h1-notes'); 
       toggle.classList.toggle('bi-moon-fill');
       const isDarkMode = toggle.classList.toggle('bi-brightness-high-fill');
   
       if (isDarkMode) {
         toggle.style.color = 'goldenrod';
+        h1Header.style.color = 'black';
+        h1Header.style.textShadow = '2px 2px 5px white';
+        h1Home.style.color = 'black';
+        h1Home.style.textShadow = '2px 2px 5px white';
+        h1Notes.style.color = 'black';
+        h1Notes.style.textShadow = '2px 2px 5px white';
         body.style.setProperty('--before-opacity', '1');
         localStorage.setItem('mode', 'light');
       } else {
         toggle.style.color = '#1a193a';
+        h1Header.style.color = 'white';
+        h1Header.style.textShadow = '2px 2px 5px black'
+        h1Home.style.color = 'yellow';
+        h1Home.style.textShadow = '2px 2px 2px black';
+        h1Notes.style.color = 'yellow';
+        h1Notes.style.textShadow = '2px 2px 2px black';
         body.style.setProperty('--before-opacity', '0');
         body.style.backgroundColor = '#1a193a';
         localStorage.setItem('mode', 'dark');
