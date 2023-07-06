@@ -17,6 +17,7 @@ function displayHomeOrNotes() {
   const notesContainer = document.querySelector('.notes-container');
 
 
+  // to dos tab for displaying todos
   listHome.addEventListener('click', () => {
     listHome.classList.add('active');
     listNotes.classList.remove('active');
@@ -34,6 +35,7 @@ function displayHomeOrNotes() {
     }
   });
 
+  // notes tab for displaying notes
   listNotes.addEventListener('click', () => {
     listHome.classList.remove('active');
     listNotes.classList.add('active');
@@ -46,6 +48,7 @@ function displayHomeOrNotes() {
 
   });
 
+  // button for adding todos
   addHomeBtn.addEventListener('click', () => {
     if (addHomeBtn.classList.contains('active')) {
       addHomeBtn.classList.remove('active');
@@ -56,6 +59,7 @@ function displayHomeOrNotes() {
     }
   });
 
+  // button for adding notes
   addNotesBtn.addEventListener('click', () => {
     if (addNotesBtn.classList.contains('active')) {
       addNotesBtn.classList.remove('active');
@@ -67,6 +71,7 @@ function displayHomeOrNotes() {
   });
 }
 
+// showing everything in the page
 function showPage() {
   loadPage();
   displayHomeOrNotes();

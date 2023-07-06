@@ -1,3 +1,4 @@
+// array of notes
 let myNotes = [];
 
 function Notes(description, noteName) {
@@ -5,6 +6,7 @@ function Notes(description, noteName) {
   this.noteName = noteName;
 }
 
+// function for rendering notes
 function renderNotes() {
   const notesContainer = document.querySelector(".notes-container");
   notesContainer.innerHTML = "";
@@ -23,6 +25,7 @@ function renderNotes() {
       `;
     notesContainer.appendChild(noteEl);
 
+    // delete notes button
     const deleteNote = noteEl.querySelector(".delete-note");
 
     deleteNote.addEventListener("click", () => {
@@ -37,6 +40,7 @@ function renderNotes() {
   });
 }
 
+// function for displaying notes after rendering them
 function addNotes() {
   let description = document.querySelector("#note").value;
   let noteName = document.querySelector("#noteName").value;

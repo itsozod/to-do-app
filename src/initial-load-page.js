@@ -1,3 +1,4 @@
+// function for creating a header
 function createHeader() {
     const header = document.createElement('header');
     header.setAttribute('id', 'header');
@@ -39,6 +40,7 @@ function createHeader() {
     return header;
 }
 
+// function for changing themes from light to dark
     function toggleDarkMode() {
       const toggle = document.querySelector('#toggleDark');
       const body = document.querySelector('body');
@@ -72,7 +74,7 @@ function createHeader() {
       }
     }
   
-
+// icon burger
 function moveLines() {
     const line1 = document.querySelector('.line1');
     const line2 = document.querySelector('.line2');
@@ -107,6 +109,7 @@ function moveLines() {
       }
 }
 
+// function for creating sidebar and main
 function createPage() {
     // page container
     const pageContainer = document.createElement('div');
@@ -219,7 +222,7 @@ function createPage() {
     return pageContainer;
 }
 
-
+// loading header, sidebar and main to the page
 function loadPage() {
     const content = document.querySelector('#content');
     const header = createHeader();

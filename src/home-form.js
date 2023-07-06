@@ -1,3 +1,4 @@
+// function to create a form for todos page
 function createHomeForm() {
   const form = document.createElement("form");
   form.setAttribute("id", "form");
@@ -9,6 +10,7 @@ function createHomeForm() {
   return form;
 }
 
+// function to create a form for notes page
 function createNotesForm() {
   const form1 = document.createElement("form");
   form1.setAttribute("id", "form1");
@@ -21,6 +23,7 @@ function createNotesForm() {
     return form1;
 }
 
+// prevent default for todos page
 function preventDefaultHome() {
   const form = document.querySelector("#form");
   const nameHomeInput = document.querySelector("#name");
@@ -36,6 +39,7 @@ function preventDefaultHome() {
   });
 }
 
+// prevent default for notes page
 function preventDefaultNotes() {
     const form1 = document.querySelector('#form1');
     const nameNotesInput = document.querySelector('#note');
@@ -58,6 +62,7 @@ function preventDefaultNotes() {
     });
 }
 
+// load forms in the page
 function loadHomeForm() {
   const formHomeContainer = document.querySelector(".form-container");
   const form = createHomeForm();

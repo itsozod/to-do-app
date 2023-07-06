@@ -1,9 +1,11 @@
+// array of todos
 let myTodos = [];
 
 function ToDo(name, completed) {
   this.name = name;
   this.completed = completed || false;
 }
+// function to render todos
 function renderTodos() {
 
   const todosContainer = document.querySelector('.todos-container');
@@ -90,6 +92,7 @@ function renderTodos() {
       }, 500);
     });
 
+    // edit button
     const editBtn = todoEl.querySelector('.todo-btn');
 
     editBtn.addEventListener('click', function () {
@@ -101,6 +104,7 @@ function renderTodos() {
   });
 }
 
+// function for editting todos and displaying edited ones
 function editTodoText(todo, todoElement, editBtn, addBackBtnId) {
 const buttonContainer = todoElement.nextElementSibling;
 
@@ -144,7 +148,7 @@ addBackBtn.addEventListener('click', function() {
 // }
 
 
-  
+  // function for displaying todos after rendering them
   function addTodos() {
     let name = document.querySelector("#name").value;
   
