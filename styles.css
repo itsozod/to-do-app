@@ -11,7 +11,7 @@ body {
   margin: 0;
   /* background-color: #1a193a; */
 }
-body:before {
+body::before {
   content: "";
   top: 0;
   right: 0;
@@ -23,7 +23,7 @@ body:before {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  opacity: 0.7;
+  opacity: var(--before-opacity, 1);
 }
 .lines {
   display: flex;
@@ -64,6 +64,13 @@ body:before {
 }
 .h1-header {
   margin-right: 10px;
+}
+/* dark mode */
+#toggleDark {
+  margin-right: 10px;
+  font-size: 25px;
+  color: goldenrod;
+  cursor: pointer;
 }
 
 .list-home,
