@@ -1,5 +1,5 @@
 // array of todos
-let myTodos = [];
+let myTodos = JSON.parse(localStorage.getItem('todo')) || [];
 
 function ToDo(name, completed) {
   this.name = name;
@@ -41,6 +41,7 @@ function renderTodos() {
         alert('Your todo has been deleted!');
       }, 500);
       console.log('Your todo has been deleted!');
+      saveTodos();
     });
 
     // each todo, green and red icons
@@ -70,6 +71,7 @@ function renderTodos() {
       }
 
       todoElement.classList.toggle("completed");
+      saveTodos();
     });
 
     greenIcon.addEventListener("click", function () {
@@ -80,6 +82,7 @@ function renderTodos() {
       setTimeout(() => {
         alert("Todo has been marked as completed")
       }, 500);
+      saveTodos();
     });
 
     redIcon.addEventListener("click", function () {
@@ -90,6 +93,7 @@ function renderTodos() {
       setTimeout(() => {
         alert("Todo has been marked as not completed")
       }, 500);
+      saveTodos();
     });
 
     // edit button
@@ -136,16 +140,18 @@ addBackBtn.addEventListener('click', function() {
     console.log('Your todo has been edited');
   }, 500);
 
-  // todoElement.addEventListener("click", function () {
-  //   toggleTodoCompletion(todo, todoElement);
-  // });
+  todoElement.addEventListener("click", function () {
+    toggleTodoCompletion(todo, todoElement);
+  });
+  saveTodos();
 });
 }
 
-// function toggleTodoCompletion(todo, todoElement) {
-//   todo.completed = !todo.completed;
-//   todoElement.classList.toggle("completed");
-// }
+function toggleTodoCompletion(todo, todoElement) {
+  todo.completed = !todo.completed;
+  todoElement.classList.toggle("completed");
+  saveTodos();
+}
 
 
   // function for displaying todos after rendering them
@@ -159,9 +165,14 @@ addBackBtn.addEventListener('click', function() {
       setTimeout(() => {
         alert('Your todo has been added!');
       }, 500);
+      saveTodos();
       console.log("Your todo has been added!");
     }
   }
 
+  function saveTodos() {
+    localStorage.setItem('todo', JSON.stringify(myTodos));
+  }
+
   // export default addTodos;
-  export { myTodos, addTodos };
+  export { myTodos, addTodos, renderTodos };

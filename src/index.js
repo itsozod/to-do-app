@@ -1,6 +1,6 @@
 import loadPage from "./initial-load-page";
 import loadHomeForm  from './home-form';
-import { myTodos, addTodos } from "./render";
+import { myTodos, addTodos, renderTodos } from "./render";
 import { addNotes } from "./render-notes";
 import { toggleDarkMode } from "./initial-load-page";
 
@@ -79,6 +79,7 @@ function showPage() {
 
   const submitBtn = document.querySelector('#submit-btn');
   submitBtn.addEventListener("click", addTodos);
+  renderTodos();
 
   const submitBtn1 = document.querySelector('#submit-btn1');
   submitBtn1.addEventListener('click', addNotes);
