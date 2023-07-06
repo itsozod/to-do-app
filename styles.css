@@ -9,7 +9,6 @@ body {
   width: 100%;
   min-height: 100vh;
   margin: 0;
-  /* background-color: #1a193a; */
 }
 body::before {
   content: "";
@@ -31,7 +30,6 @@ body::before {
   padding: 10px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
-  /* display: none; */
 }
 .line1, .line2, .line3{
   background-color: white;
@@ -64,6 +62,7 @@ body::before {
 }
 .h1-header {
   margin-right: 10px;
+  font-family: 'Lobster', cursive;
 }
 /* dark mode */
 #toggleDark {
@@ -81,6 +80,7 @@ body::before {
   font-weight: bold;
   cursor: pointer;
   text-shadow: 2px 2px 5px white;
+  font-family: 'PT Serif', serif;
 }
 .active {
   color: red;
@@ -106,6 +106,7 @@ body::before {
   border-right: 2px solid red;
   display: none;
 }
+/* main */
 #main {
   flex: 1 1 auto;
   display: flex;
@@ -116,6 +117,7 @@ body::before {
   display: flex;
   justify-content: center;
 }
+/* add todos container */
 .add-homeContainer {
   display: flex;
   justify-content: space-around;
@@ -124,11 +126,12 @@ body::before {
   border-radius: 20px;
   width: 220px;
   height: 50px;
-  margin: 10px;
+  margin-top: 20px;
 }
 .h1-home {
   margin-left: 10px;
-  font-size: 24px;
+  font-size: 25px;
+  font-family: 'Secular One', sans-serif;
 }
 /* add home button */
 .add-home-btn {
@@ -145,6 +148,7 @@ body::before {
   display: flex;
   justify-content: center;
 }
+/* add notes container */
 .add-notesContainer {
   display: flex;
   justify-content: space-around;
@@ -153,12 +157,13 @@ body::before {
   border-radius: 20px;
   width: 220px;
   height: 50px;
-  margin: 10px;
+  margin-top: 20px;
   display: none;
 }
 .h1-notes {
   margin-left: 10px;
-  font-size: 24px;
+  font-size: 25px;
+  font-family: 'Secular One', sans-serif;
 }
 /* add notes button */
 .add-notes-btn {
@@ -171,7 +176,7 @@ body::before {
 .add-notes-btn.active {
   transform: scale(1.3) rotate(360deg);
 }
-
+/* media queries for sidebar */
 @media screen and (max-width: 840px) {
   .page-container {
     flex-direction: column;
@@ -229,6 +234,7 @@ body::before {
   border: 2px solid yellow;
   box-shadow: 2px 2px 5px black;
   cursor: pointer;
+  font-size: 18px;
 }
 #name:focus {
   border: 2px solid red;
@@ -280,6 +286,9 @@ body::before {
   background-color: lightskyblue;
   box-shadow: 2px 2px 5px black;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Lobster', cursive;
 }
 #submit-btn:hover {
   background-color: aqua;
@@ -291,9 +300,29 @@ body::before {
   background-color: lightskyblue;
   box-shadow: 2px 2px 5px black;
   cursor: pointer;
+  font-weight: bold;
+  font-family: 'Lobster', cursive;
+  font-size: 18px;
 }
 #submit-btn1:hover {
   background-color: limegreen;
+}
+/* media queries for header and add todos button */
+@media screen and (max-width: 333px) {
+  .h1-header {
+    font-size: 25px;
+  }
+  .checked-img {
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+  }
+  #name {
+    font-size: 15px;
+  }
+  #submit-btn {
+    font-size: 15px;
+  }
 }
 .main-home-form {
   display: flex;
@@ -322,12 +351,12 @@ body::before {
   display: flex;
   flex-direction: column;
 }
-
 /* to dos container */
 .main-todos {
   display: flex;
   justify-content: center;
 }
+/* to do container */
 .todos-container {
   margin-top: 20px;
   display: flex;
@@ -399,7 +428,7 @@ body::before {
 .input-add:focus {
   border: 2px solid lightseagreen;
 }
-
+/* media queries for todos container */
 @media screen and (max-width: 401px) {
   .container {
     max-width: 300px;
@@ -451,13 +480,23 @@ body::before {
     width: 30px;
   }
 }
-
-/* notes container */
+@media screen and (max-width: 291px) {
+  .container {
+    max-width: 220px;
+  }
+  .input-add {
+    width: 110px;
+  }
+  .todo {
+    font-size: 10px;
+  }
+}
 .main-notes-container {
 margin: 20px;
 padding: 20px;
 
 }
+/* notes container */
 .notes-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -505,7 +544,7 @@ padding: 20px;
   height: auto;
   cursor: pointer;
 }
-
+/* media queries for notes container */
 @media (max-width: 640px) {
   .notes-container {
     display: flex;
@@ -514,8 +553,17 @@ padding: 20px;
     align-items: center;
   }
   .notes {
-    max-width: 250px; /* Adjust the max-width of notes as desired */
+    max-width: 250px;
     margin: 0 auto;
+  }
+}
+/* media query for notes form container */
+@media screen and (max-width: 375px) {
+  #note {
+    width: 200px;
+  }
+  #noteName {
+    width: 200px;
   }
 }
 
