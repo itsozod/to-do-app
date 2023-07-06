@@ -9,6 +9,7 @@ body {
   width: 100%;
   min-height: 100vh;
   margin: 0;
+  /* background-color: #1a193a; */
 }
 body:before {
   content: "";
@@ -181,12 +182,13 @@ body:before {
     left: 0;
   }
   .ul-bar {
-    margin: 20px;
+    margin-top: 20px;
+    margin-right: 35px;
   }
   .list-home {
     list-style-type: none;
-    padding: 10px;
-    width: 90px;
+    /* padding: 10px; */
+    width: 80px;
     border-radius: 10px;
     font-size: 25px;
     margin-bottom: 10px;
@@ -201,8 +203,8 @@ body:before {
   .list-notes {
     list-style-type: none;
     list-style-type: none;
-    padding: 10px;
-    width: 90px;
+    /* padding: 10px; */
+    width: 80px;
     border-radius: 10px;
     font-size: 25px;
     color: white;
