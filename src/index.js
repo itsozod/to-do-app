@@ -1,7 +1,7 @@
 import loadPage from "./initial-load-page";
 import loadHomeForm  from './home-form';
 import { myTodos, addTodos, renderTodos } from "./render";
-import { addNotes } from "./render-notes";
+import { addNotes, renderNotes } from "./render-notes";
 import { toggleDarkMode } from "./initial-load-page";
 
 function displayHomeOrNotes() {
@@ -83,6 +83,7 @@ function showPage() {
 
   const submitBtn1 = document.querySelector('#submit-btn1');
   submitBtn1.addEventListener('click', addNotes);
+  renderNotes();
 
   const toggle = document.querySelector('#toggleDark');
   toggle.addEventListener("click", toggleDarkMode);

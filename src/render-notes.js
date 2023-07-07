@@ -1,5 +1,5 @@
 // array of notes
-let myNotes = [];
+let myNotes = JSON.parse(localStorage.getItem('note')) || [];
 
 function Notes(description, noteName) {
   this.description = description;
@@ -36,6 +36,7 @@ function renderNotes() {
         alert("Your note has been deleted");
       }, 500);
       console.log("Your note has been deleted");
+      saveNotes();
     });
   });
 }
@@ -53,7 +54,12 @@ function addNotes() {
       alert("Your note has been added");
     }, 500);
     console.log("Your note has been added");
+    saveNotes();
   }
 }
 
-export { addNotes };
+function saveNotes() {
+  localStorage.setItem('note', JSON.stringify(myNotes));
+}
+
+export { addNotes, renderNotes };
