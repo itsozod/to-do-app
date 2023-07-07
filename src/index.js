@@ -1,72 +1,99 @@
 import loadPage from "./initial-load-page";
-import loadHomeForm  from './home-form';
+import loadHomeForm from "./home-form";
 import { myTodos, addTodos, renderTodos } from "./render";
 import { addNotes, renderNotes } from "./render-notes";
 import { toggleDarkMode } from "./initial-load-page";
 
 function displayHomeOrNotes() {
-  const listHome = document.querySelector('.list-home');
-  const listNotes = document.querySelector('.list-notes');
-  const addHomeContainer = document.querySelector('.add-homeContainer');
-  const addHomeBtn = document.querySelector('.add-home-btn');
-  const addNotesContainer = document.querySelector('.add-notesContainer');
-  const addNotesBtn = document.querySelector('.add-notes-btn');
-  const formHomeContainer = document.querySelector('.form-container');
-  const formNotesContainer = document.querySelector('.form-container1');
-  const todosContainer = document.querySelector('.todos-container');
-  const notesContainer = document.querySelector('.notes-container');
+  const listHome = document.querySelector(".list-home");
+  const listNotes = document.querySelector(".list-notes");
+  const addHomeContainer = document.querySelector(".add-homeContainer");
+  const addHomeBtn = document.querySelector(".add-home-btn");
+  const addNotesContainer = document.querySelector(".add-notesContainer");
+  const addNotesBtn = document.querySelector(".add-notes-btn");
+  const formHomeContainer = document.querySelector(".form-container");
+  const formNotesContainer = document.querySelector(".form-container1");
+  const todosContainer = document.querySelector(".todos-container");
+  const notesContainer = document.querySelector(".notes-container");
+  const mainTodos = document.querySelector(".main-todos");
 
+  const activeTab = localStorage.getItem("activeTab");
 
+  // Set the initial active tab based on the stored value
+  if (activeTab === "listNotes") {
+    listNotes.classList.add("active");
+    listHome.classList.remove("active");
+    addHomeContainer.style.display = "none";
+    addHomeBtn.classList.remove("active");
+    addNotesContainer.style.display = "flex";
+    formHomeContainer.style.display = "none";
+    todosContainer.style.display = "none";
+    mainTodos.style.display = "none";
+    notesContainer.style.display = "grid";
+  } else {
+    listHome.classList.add("active");
+    listNotes.classList.remove("active");
+    addHomeContainer.style.display = "flex";
+    addNotesBtn.classList.remove("active");
+    addNotesContainer.style.display = "none";
+    formNotesContainer.style.display = "none";
+    notesContainer.style.display = "none";
+    todosContainer.style.display = "flex";
+    mainTodos.style.display = "flex";
+  }
   // to dos tab for displaying todos
-  listHome.addEventListener('click', () => {
-    listHome.classList.add('active');
-    listNotes.classList.remove('active');
-    addHomeContainer.style.display = 'flex';
-    addNotesBtn.classList.remove('active');
-    addNotesContainer.style.display = 'none';
-    formNotesContainer.style.display = 'none';
-    notesContainer.style.display = 'none';
-    todosContainer.style.display = 'flex';
+  listHome.addEventListener("click", () => {
+    listHome.classList.add("active");
+    listNotes.classList.remove("active");
+    addHomeContainer.style.display = "flex";
+    addNotesBtn.classList.remove("active");
+    addNotesContainer.style.display = "none";
+    formNotesContainer.style.display = "none";
+    notesContainer.style.display = "none";
+    mainTodos.style.display = "flex";
+    todosContainer.style.display = "flex";
+    localStorage.setItem('activeTab', 'listHome');
 
     if (myTodos.length === 0) {
-      todosContainer.style.display = 'none';
+      todosContainer.style.display = "none";
     } else {
-      todosContainer.style.display = 'flex';
+      todosContainer.style.display = "flex";
     }
   });
 
   // notes tab for displaying notes
-  listNotes.addEventListener('click', () => {
-    listHome.classList.remove('active');
-    listNotes.classList.add('active');
-    addHomeContainer.style.display = 'none';
-    addHomeBtn.classList.remove('active');
-    addNotesContainer.style.display = 'flex';
-    formHomeContainer.style.display = 'none';
-    todosContainer.style.display = 'none';
-    notesContainer.style.display = 'grid';
-
+  listNotes.addEventListener("click", () => {
+    listHome.classList.remove("active");
+    listNotes.classList.add("active");
+    addHomeContainer.style.display = "none";
+    addHomeBtn.classList.remove("active");
+    addNotesContainer.style.display = "flex";
+    formHomeContainer.style.display = "none";
+    mainTodos.style.display = "none";
+    todosContainer.style.display = "none";
+    notesContainer.style.display = "grid";
+    localStorage.setItem('activeTab', 'listNotes');
   });
 
   // button for adding todos
-  addHomeBtn.addEventListener('click', () => {
-    if (addHomeBtn.classList.contains('active')) {
-      addHomeBtn.classList.remove('active');
-      formHomeContainer.style.display = 'none';
+  addHomeBtn.addEventListener("click", () => {
+    if (addHomeBtn.classList.contains("active")) {
+      addHomeBtn.classList.remove("active");
+      formHomeContainer.style.display = "none";
     } else {
-      addHomeBtn.classList.add('active');
-      formHomeContainer.style.display = 'flex';
+      addHomeBtn.classList.add("active");
+      formHomeContainer.style.display = "flex";
     }
   });
 
   // button for adding notes
-  addNotesBtn.addEventListener('click', () => {
-    if (addNotesBtn.classList.contains('active')) {
-      addNotesBtn.classList.remove('active');
-      formNotesContainer.style.display = 'none';
+  addNotesBtn.addEventListener("click", () => {
+    if (addNotesBtn.classList.contains("active")) {
+      addNotesBtn.classList.remove("active");
+      formNotesContainer.style.display = "none";
     } else {
-      addNotesBtn.classList.add('active');
-      formNotesContainer.style.display = 'flex';
+      addNotesBtn.classList.add("active");
+      formNotesContainer.style.display = "flex";
     }
   });
 }
@@ -77,19 +104,19 @@ function showPage() {
   displayHomeOrNotes();
   loadHomeForm();
 
-  const submitBtn = document.querySelector('#submit-btn');
+  const submitBtn = document.querySelector("#submit-btn");
   submitBtn.addEventListener("click", addTodos);
   renderTodos();
 
-  const submitBtn1 = document.querySelector('#submit-btn1');
-  submitBtn1.addEventListener('click', addNotes);
+  const submitBtn1 = document.querySelector("#submit-btn1");
+  submitBtn1.addEventListener("click", addNotes);
   renderNotes();
 
-  const toggle = document.querySelector('#toggleDark');
+  const toggle = document.querySelector("#toggleDark");
   toggle.addEventListener("click", toggleDarkMode);
 
-  const currentMode = localStorage.getItem('mode');
-  if (currentMode === 'dark') {
+  const currentMode = localStorage.getItem("mode");
+  if (currentMode === "dark") {
     toggleDarkMode();
   }
 }
