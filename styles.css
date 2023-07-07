@@ -327,7 +327,25 @@ body::before {
 }
 .form-container {
   display: none;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+.main-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.empty-container {
+  background-image: linear-gradient(lightcoral, lightseagreen);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 250px;
+}
+.empty {
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  text-shadow: 2px 2px 2px orange;
 }
 .main-notes-form {
   display: flex;
@@ -352,6 +370,7 @@ body::before {
 .main-todos {
   display: flex;
   justify-content: center;
+  /* display: none; */
 }
 /* to do container */
 .todos-container {
@@ -360,9 +379,9 @@ body::before {
   flex-direction: column;
   padding: 10px;
   max-width: 520px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
   border-radius: 10px;
-  display: none;
+  /* display: none; */
 }
 .container {
   display: flex;
@@ -393,6 +412,8 @@ body::before {
   cursor: pointer;
   margin-right: 10px;
   margin-left: 10px;
+  font-family: 'DM Serif Display', serif;
+  text-shadow: 2px 2px 2px white;
 }
 .todo.completed {
   text-decoration: line-through;
@@ -489,8 +510,8 @@ body::before {
   }
 }
 .main-notes-container {
-  margin: 20px;
-  padding: 20px;
+  display: grid;
+  /* display: none; */
 }
 /* notes container */
 .notes-container {
@@ -511,6 +532,7 @@ body::before {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 8px;
 }
 
 .description {
