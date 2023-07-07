@@ -11,6 +11,8 @@ function renderTodos() {
   const todosContainer = document.querySelector('.todos-container');
   todosContainer.innerHTML = "";
 
+  const mainEmpty = document.querySelector('.main-empty');
+
   myTodos.forEach(function (todo, index) {
     let todoEl = document.createElement("div");
     todoEl.classList.add("container");
@@ -24,7 +26,8 @@ function renderTodos() {
     </div>
   `;
     todosContainer.appendChild(todoEl);
-    todosContainer.style.display = "flex";
+    todosContainer.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+    mainEmpty.style.display = 'none';
 
     // delete todo button
     const deleteTodo = todoEl.querySelector('.delete-todo');
@@ -34,7 +37,8 @@ function renderTodos() {
       myTodos.splice(index, 1);
 
       if (myTodos.length === 0) {
-        todosContainer.style.display = 'none';
+        mainEmpty.style.display = 'flex';
+        todosContainer.style.backgroundColor = 'transparent';
       }
       renderTodos();
       setTimeout(() => {

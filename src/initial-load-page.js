@@ -47,6 +47,7 @@ function createHeader() {
       const h1Header = document.querySelector('.h1-header'); 
       const h1Home = document.querySelector('.h1-home'); 
       const h1Notes = document.querySelector('.h1-notes'); 
+      const empty = document.querySelector('.empty');
       toggle.classList.toggle('bi-moon-fill');
       const isDarkMode = toggle.classList.toggle('bi-brightness-high-fill');
   
@@ -58,6 +59,8 @@ function createHeader() {
         h1Home.style.textShadow = '2px 2px 5px white';
         h1Notes.style.color = 'black';
         h1Notes.style.textShadow = '2px 2px 5px white';
+        empty.style.color = 'black';
+        empty.style.textShadow = '2px 2px 2px orange';
         body.style.setProperty('--before-opacity', '1');
         localStorage.setItem('mode', 'light');
       } else {
@@ -68,6 +71,8 @@ function createHeader() {
         h1Home.style.textShadow = '2px 2px 2px black';
         h1Notes.style.color = 'yellow';
         h1Notes.style.textShadow = '2px 2px 2px black';
+        empty.style.color = 'yellow';
+        empty.style.textShadow = '2px 2px 2px black';
         body.style.setProperty('--before-opacity', '0');
         body.style.backgroundColor = '#1a193a';
         localStorage.setItem('mode', 'dark');
@@ -160,6 +165,18 @@ function createPage() {
     
     addHomeContainer.appendChild(h1Home);
     addHomeContainer.appendChild(addHomeBtn);
+
+    const mainEmpty = document.createElement('div');
+    mainEmpty.classList.add('main-empty');
+
+    const emptyContainer = document.createElement('div');
+    emptyContainer.classList.add('empty-container');
+
+    const empty = document.createElement('h3');
+    empty.classList.add('empty');
+    empty.textContent = "It's currently empty here!";
+    emptyContainer.appendChild(empty);
+    mainEmpty.appendChild(emptyContainer);
     
     const mainHomeForm = document.createElement('div');
     mainHomeForm.classList.add('main-home-form');
@@ -176,6 +193,7 @@ function createPage() {
     mainTodos.appendChild(todosContainer);
 
     main.appendChild(mainAddHome);
+    main.appendChild(mainEmpty);
     main.appendChild(mainHomeForm);
     main.appendChild(mainTodos);
 

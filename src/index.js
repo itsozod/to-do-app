@@ -13,9 +13,11 @@ function displayHomeOrNotes() {
   const addNotesBtn = document.querySelector(".add-notes-btn");
   const formHomeContainer = document.querySelector(".form-container");
   const formNotesContainer = document.querySelector(".form-container1");
-  const todosContainer = document.querySelector(".todos-container");
-  const notesContainer = document.querySelector(".notes-container");
+  // const todosContainer = document.querySelector(".todos-container");
+  // const notesContainer = document.querySelector(".notes-container");
   const mainTodos = document.querySelector(".main-todos");
+  const mainNotesContainer = document.querySelector(".main-notes-container");
+  const mainEmpty = document.querySelector(".main-empty");
 
   const activeTab = localStorage.getItem("activeTab");
 
@@ -27,9 +29,9 @@ function displayHomeOrNotes() {
     addHomeBtn.classList.remove("active");
     addNotesContainer.style.display = "flex";
     formHomeContainer.style.display = "none";
-    todosContainer.style.display = "none";
     mainTodos.style.display = "none";
-    notesContainer.style.display = "grid";
+    mainNotesContainer.style.display = "grid";
+    mainEmpty.style.display = "none";
   } else {
     listHome.classList.add("active");
     listNotes.classList.remove("active");
@@ -37,9 +39,9 @@ function displayHomeOrNotes() {
     addNotesBtn.classList.remove("active");
     addNotesContainer.style.display = "none";
     formNotesContainer.style.display = "none";
-    notesContainer.style.display = "none";
-    todosContainer.style.display = "flex";
+    mainNotesContainer.style.display = "none";
     mainTodos.style.display = "flex";
+    mainEmpty.style.display = "flex";
   }
   // to dos tab for displaying todos
   listHome.addEventListener("click", () => {
@@ -49,16 +51,15 @@ function displayHomeOrNotes() {
     addNotesBtn.classList.remove("active");
     addNotesContainer.style.display = "none";
     formNotesContainer.style.display = "none";
-    notesContainer.style.display = "none";
+    mainNotesContainer.style.display = "none";
     mainTodos.style.display = "flex";
-    todosContainer.style.display = "flex";
-    localStorage.setItem('activeTab', 'listHome');
-
+    
     if (myTodos.length === 0) {
-      todosContainer.style.display = "none";
+      mainEmpty.style.display = "flex";
     } else {
-      todosContainer.style.display = "flex";
+      mainEmpty.style.display = "none";
     }
+    localStorage.setItem('activeTab', 'listHome');
   });
 
   // notes tab for displaying notes
@@ -70,8 +71,8 @@ function displayHomeOrNotes() {
     addNotesContainer.style.display = "flex";
     formHomeContainer.style.display = "none";
     mainTodos.style.display = "none";
-    todosContainer.style.display = "none";
-    notesContainer.style.display = "grid";
+    mainNotesContainer.style.display = "grid";
+    mainEmpty.style.display = "none";
     localStorage.setItem('activeTab', 'listNotes');
   });
 
