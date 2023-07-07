@@ -562,6 +562,7 @@ body::before {
   cursor: pointer;
   width: 215px;
   border: 2px solid lightseagreen;
+  font-size: 20px;
 }
 .note-name {
   width: 215px;
@@ -571,6 +572,7 @@ body::before {
   border: 2px solid lightseagreen;
   cursor: pointer;
   border-top: none;
+  font-size: 17px;
 }
 .desc-container {
   display: flex;

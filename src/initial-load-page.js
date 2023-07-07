@@ -48,6 +48,7 @@ function createHeader() {
       const h1Home = document.querySelector('.h1-home'); 
       const h1Notes = document.querySelector('.h1-notes'); 
       const empty = document.querySelector('.empty');
+      const emptyNotes = document.querySelector('.empty-notes');
       toggle.classList.toggle('bi-moon-fill');
       const isDarkMode = toggle.classList.toggle('bi-brightness-high-fill');
   
@@ -61,6 +62,8 @@ function createHeader() {
         h1Notes.style.textShadow = '2px 2px 5px white';
         empty.style.color = 'black';
         empty.style.textShadow = '2px 2px 2px orange';
+        emptyNotes.style.color = 'black';
+        emptyNotes.style.textShadow = '2px 2px 2px orange';
         body.style.setProperty('--before-opacity', '1');
         localStorage.setItem('mode', 'light');
       } else {
@@ -69,10 +72,12 @@ function createHeader() {
         h1Header.style.textShadow = '2px 2px 5px black'
         h1Home.style.color = 'yellow';
         h1Home.style.textShadow = '2px 2px 2px black';
-        h1Notes.style.color = 'yellow';
+        h1Notes.style.color = 'lightgreen';
         h1Notes.style.textShadow = '2px 2px 2px black';
         empty.style.color = 'yellow';
         empty.style.textShadow = '2px 2px 2px black';
+        emptyNotes.style.color = 'lightgreen';
+        emptyNotes.style.textShadow = '2px 2px 2px black';
         body.style.setProperty('--before-opacity', '0');
         body.style.backgroundColor = '#1a193a';
         localStorage.setItem('mode', 'dark');
@@ -96,7 +101,6 @@ function moveLines() {
             line2.style.opacity = '1';
             line3.classList.remove('active');
             sideBar.style.display = 'none';
-            // sideBar.style.transition = '1s';
         }, 500);
         
       } else {
@@ -105,7 +109,6 @@ function moveLines() {
             line2.style.opacity = '0';
             line3.classList.add('active');
             sideBar.style.display = 'flex';
-            // sideBar.style.transition = '1s';
         }, 500)
         addHomeBtn.classList.remove('active');
         formContainer.style.display = 'none';

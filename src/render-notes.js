@@ -28,6 +28,19 @@ function renderNotes() {
     notesContainer.appendChild(noteEl);
     mainEmptyNotes.style.display = 'none';
 
+    const descriptionTextarea = noteEl.querySelector('.description');
+    const noteNameTextarea = noteEl.querySelector('.note-name');
+
+    descriptionTextarea.addEventListener('input', () => {
+      note.description = descriptionTextarea.value;
+      saveNotes();
+    });
+
+    noteNameTextarea.addEventListener('input', () => {
+      note.noteName = noteNameTextarea.value;
+      saveNotes();
+    });
+
     // delete notes button
     const deleteNote = noteEl.querySelector(".delete-note");
 
