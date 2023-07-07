@@ -1,7 +1,7 @@
 import loadPage from "./initial-load-page";
 import loadHomeForm from "./home-form";
 import { myTodos, addTodos, renderTodos } from "./render";
-import { addNotes, renderNotes } from "./render-notes";
+import { myNotes, addNotes, renderNotes } from "./render-notes";
 import { toggleDarkMode } from "./initial-load-page";
 
 function displayHomeOrNotes() {
@@ -13,11 +13,10 @@ function displayHomeOrNotes() {
   const addNotesBtn = document.querySelector(".add-notes-btn");
   const formHomeContainer = document.querySelector(".form-container");
   const formNotesContainer = document.querySelector(".form-container1");
-  // const todosContainer = document.querySelector(".todos-container");
-  // const notesContainer = document.querySelector(".notes-container");
   const mainTodos = document.querySelector(".main-todos");
   const mainNotesContainer = document.querySelector(".main-notes-container");
   const mainEmpty = document.querySelector(".main-empty");
+  const mainEmptyNotes = document.querySelector(".main-empty-notes");
 
   const activeTab = localStorage.getItem("activeTab");
 
@@ -32,6 +31,7 @@ function displayHomeOrNotes() {
     mainTodos.style.display = "none";
     mainNotesContainer.style.display = "grid";
     mainEmpty.style.display = "none";
+    mainEmptyNotes.style.display = "flex";
   } else {
     listHome.classList.add("active");
     listNotes.classList.remove("active");
@@ -42,6 +42,7 @@ function displayHomeOrNotes() {
     mainNotesContainer.style.display = "none";
     mainTodos.style.display = "flex";
     mainEmpty.style.display = "flex";
+    mainEmptyNotes.style.display = "none";
   }
   // to dos tab for displaying todos
   listHome.addEventListener("click", () => {
@@ -53,6 +54,7 @@ function displayHomeOrNotes() {
     formNotesContainer.style.display = "none";
     mainNotesContainer.style.display = "none";
     mainTodos.style.display = "flex";
+    mainEmptyNotes.style.display = "none";
     
     if (myTodos.length === 0) {
       mainEmpty.style.display = "flex";
@@ -73,6 +75,12 @@ function displayHomeOrNotes() {
     mainTodos.style.display = "none";
     mainNotesContainer.style.display = "grid";
     mainEmpty.style.display = "none";
+
+    if (myNotes.length === 0) {
+      mainEmptyNotes.style.display = "flex";
+    } else {
+      mainEmptyNotes.style.display = "none";
+    }
     localStorage.setItem('activeTab', 'listNotes');
   });
 

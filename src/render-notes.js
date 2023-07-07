@@ -11,6 +11,8 @@ function renderNotes() {
   const notesContainer = document.querySelector(".notes-container");
   notesContainer.innerHTML = "";
 
+  const mainEmptyNotes = document.querySelector('.main-empty-notes');
+
   myNotes.forEach(function (note) {
     let noteEl = document.createElement("div");
     noteEl.classList.add("notes");
@@ -24,6 +26,7 @@ function renderNotes() {
         </div>
       `;
     notesContainer.appendChild(noteEl);
+    mainEmptyNotes.style.display = 'none';
 
     // delete notes button
     const deleteNote = noteEl.querySelector(".delete-note");
@@ -31,6 +34,10 @@ function renderNotes() {
     deleteNote.addEventListener("click", () => {
       const index = myNotes.indexOf(note);
       myNotes.splice(index, 1);
+
+      if (myNotes.length === 0) {
+        mainEmptyNotes.style.display = "flex";
+      }
       renderNotes();
       setTimeout(() => {
         alert("Your note has been deleted");
@@ -62,4 +69,4 @@ function saveNotes() {
   localStorage.setItem('note', JSON.stringify(myNotes));
 }
 
-export { addNotes, renderNotes };
+export { myNotes, addNotes, renderNotes };

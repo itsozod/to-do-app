@@ -219,6 +219,18 @@ function createPage() {
 
     main.appendChild(mainAddNotes);
 
+    const mainEmptyNotes = document.createElement('div');
+    mainEmptyNotes.classList.add('main-empty-notes');
+
+    const emptyNotesContainer = document.createElement('div');
+    emptyNotesContainer.classList.add('empty-notes-container');
+
+    const emptyNotes = document.createElement('h3');
+    emptyNotes.classList.add('empty-notes');
+    emptyNotes.textContent = "It's currently empty here!";
+    emptyNotesContainer.appendChild(emptyNotes);
+    mainEmptyNotes.appendChild(emptyNotesContainer);
+
     const mainNotesForm = document.createElement('div');
     mainNotesForm.classList.add('main-notes-form');
 
@@ -233,6 +245,7 @@ function createPage() {
     notesContainer.classList.add('notes-container');
     mainNotesContainer.appendChild(notesContainer);
 
+    main.appendChild(mainEmptyNotes);
     main.appendChild(mainNotesForm);
     main.appendChild(mainNotesContainer);
 

@@ -329,6 +329,7 @@ body::before {
   display: none;
   margin-top: 20px;
 }
+/* empty message for todos tab */
 .main-empty {
   display: flex;
   justify-content: center;
@@ -342,6 +343,25 @@ body::before {
   width: 250px;
 }
 .empty {
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  text-shadow: 2px 2px 2px orange;
+}
+/* empty message for notes tab */
+.main-empty-notes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.empty-notes-container {
+  background-image: linear-gradient(lightcoral, lightseagreen);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 250px;
+}
+.empty-notes {
   font-size: 24px;
   text-align: center;
   font-family: 'Bebas Neue', sans-serif;
@@ -532,7 +552,7 @@ body::before {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-bottom: 8px;
+  padding-bottom: 30px;
 }
 
 .description {
