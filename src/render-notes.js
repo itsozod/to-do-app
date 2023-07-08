@@ -12,6 +12,8 @@ function renderNotes() {
   notesContainer.innerHTML = "";
 
   const mainEmptyNotes = document.querySelector('.main-empty-notes');
+  let description = document.querySelector("#note");
+  let noteName = document.querySelector("#noteName");
 
   myNotes.forEach(function (note) {
     let noteEl = document.createElement("div");
@@ -27,6 +29,10 @@ function renderNotes() {
       `;
     notesContainer.appendChild(noteEl);
     mainEmptyNotes.style.display = 'none';
+    setTimeout(() => {
+      description.value = "";
+      noteName.value = "";
+    }, 500);
 
     const descriptionTextarea = noteEl.querySelector('.description');
     const noteNameTextarea = noteEl.querySelector('.note-name');

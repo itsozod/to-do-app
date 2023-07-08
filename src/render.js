@@ -12,6 +12,7 @@ function renderTodos() {
   todosContainer.innerHTML = "";
 
   const mainEmpty = document.querySelector('.main-empty');
+  let name = document.querySelector('#name');
 
   myTodos.forEach(function (todo, index) {
     let todoEl = document.createElement("div");
@@ -26,6 +27,9 @@ function renderTodos() {
     </div>
   `;
     todosContainer.appendChild(todoEl);
+    setTimeout(() => {
+      name.value = "";
+    }, 500);
     todosContainer.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
     mainEmpty.style.display = 'none';
 
